@@ -4,4 +4,5 @@
 # Except:
 !.gitignore
 !java-tp2
+!java-tp2/*
 !README.md
