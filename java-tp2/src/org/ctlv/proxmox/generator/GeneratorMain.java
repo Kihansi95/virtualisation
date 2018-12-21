@@ -87,13 +87,16 @@ public class GeneratorMain {
 					serverName = Constants.SERVER2;
 				
 				// créer un contenaire sur ce serveur
-				api.createCT(serverName, Integer.toString(1400+cpt), "ct-tpgei-virt-A4-ct"+cpt, Constants.RAM_SIZE[rndRAM.nextInt(3)], CreateMode.ERASE);
+				String ctId = Integer.toString(1400+cpt);
+				api.createCT(serverName, ctId, "ct-tpgei-virt-A4-ct"+cpt, Constants.RAM_SIZE[rndRAM.nextInt(3)], CreateMode.ERASE);
+				api.startCT(serverName, ctId);
 								
 				// planifier la prochaine création
 				int timeToWait = getNextEventExponential(lambda); // par exemple une loi expo d'une moyenne de 30sec
 				
 				// attendre jusqu'au prochain évènement
-				Thread.sleep(1000 * timeToWait);
+				Thread.sleep(100 * timeToWait);
+//				Thread.sleep(1000 * timeToWait);
 			}
 			else {
 				System.out.println("Servers are loaded, waiting ...");

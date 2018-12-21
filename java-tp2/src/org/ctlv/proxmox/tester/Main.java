@@ -56,16 +56,17 @@ public class Main {
 
 
 		// TODO to be wiped out when done testing:
-//		api.createCT(Constants.SERVER1, Long.toString(Constants.CT_BASE_ID), Constants.CT_BASE_NAME, Constants.RAM_SIZE[1], CreateMode.KEEP);
-//		LXC lxc = api.getCT(Constants.SERVER1, Long.toString(Constants.CT_BASE_ID));
-//		System.out.println(lxc);
-//
-//		api.startCT(Constants.SERVER1, Long.toString(Constants.CT_BASE_ID));
-//		lxc = api.getCT(Constants.SERVER1, Long.toString(Constants.CT_BASE_ID));
-//		System.out.println(lxc);
+		api.createCT(Constants.SERVER1, Long.toString(Constants.CT_BASE_ID), Constants.CT_BASE_NAME, Constants.RAM_SIZE[1], CreateMode.KEEP);
+		LXC lxc = api.getCT(Constants.SERVER1, Long.toString(Constants.CT_BASE_ID));
+		System.out.println(lxc);
 
-		Node sv = api.getNode(Constants.SERVER2);
-		System.out.println(sv);
+		api.startCT(Constants.SERVER1, Long.toString(Constants.CT_BASE_ID));
+		lxc = api.getCT(Constants.SERVER1, Long.toString(Constants.CT_BASE_ID));
+		System.out.println(lxc);
+
+		api.stopCT(Constants.SERVER1, Long.toString(Constants.CT_BASE_ID));
+		lxc = api.getCT(Constants.SERVER1, Long.toString(Constants.CT_BASE_ID));
+		System.out.println(lxc);
 
 	}
 

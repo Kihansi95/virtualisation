@@ -65,7 +65,7 @@ public class Monitor implements Runnable {
 			
 			// attendre une certaine période
 			try {
-				Thread.sleep(Constants.MONITOR_PERIOD * 1);
+				Thread.sleep(Constants.MONITOR_PERIOD * 100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
